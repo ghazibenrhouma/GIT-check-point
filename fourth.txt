@@ -1,0 +1,156 @@
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ touch 'third.txt'
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git init
+Initialized empty Git repository in C:/Users/Asus/Desktop/learn_git_again/.git/
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        third.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m
+error: switch `m' requires a value
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m 'adding third.txt'
+[master (root-commit) 8b61420] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 8b61420edf4c8ed33699a905094901904b94be79 (HEAD -> master)
+Author: ghazibenrhouma <ghazybenrhouma@gmail.com>
+Date:   Thu Aug 20 02:46:55 2020 +0100
+
+    adding third.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ touch 'fourth.txt'
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fourth.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   fourth.txt
+
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m 'adding fourth.txt'
+[master 5223395] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git rm -r 'third.txt'
+rm 'third.txt'
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m 'removing third.txt'
+[master 7bce65d] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 7bce65df5b5414b5c14b67ae13e40605479143ba (HEAD -> master)
+Author: ghazibenrhouma <ghazybenrhouma@gmail.com>
+Date:   Thu Aug 20 02:54:58 2020 +0100
+
+    removing third.txt
+
+commit 52233950eb9677fb21d94eb3120eb36996c2961c
+Author: ghazibenrhouma <ghazybenrhouma@gmail.com>
+Date:   Thu Aug 20 02:49:51 2020 +0100
+
+    adding fourth.txt
+
+commit 8b61420edf4c8ed33699a905094901904b94be79
+Author: ghazibenrhouma <ghazybenrhouma@gmail.com>
+Date:   Thu Aug 20 02:46:55 2020 +0100
+
+    adding third.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ ls
+fourth.txt
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Asus@DESKTOP-SFF0BLS MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
